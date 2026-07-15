@@ -62,8 +62,8 @@ export function InternalHome() {
         <Card>
           <CardHeader className="flex-row items-center justify-between">
             <CardTitle>Top Partner Scores</CardTitle>
-            <Link to="/internal/executive" className="text-xs text-primary hover:underline">
-              Executive view
+            <Link to="/internal/partners" className="text-xs text-primary hover:underline">
+              View all
             </Link>
           </CardHeader>
           <CardContent className="space-y-2">
@@ -82,8 +82,8 @@ export function InternalHome() {
         <Card>
           <CardHeader className="flex-row items-center justify-between">
             <CardTitle>Open Alerts</CardTitle>
-            <Link to="/internal/errors" className="text-xs text-primary hover:underline">
-              Error intelligence
+            <Link to="/internal/observability" className="text-xs text-primary hover:underline">
+              Observability
             </Link>
           </CardHeader>
           <CardContent className="space-y-2">

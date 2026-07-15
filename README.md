@@ -17,7 +17,7 @@ Enterprise-style **API Health & Partner Monitoring Dashboard** for ICICI Lombard
 Dashboard KPIs, API health cards & trends, error analytics, error reports (CSV / Excel / PDF), action center, alerts (acknowledge / logs / ticket), notifications.
 
 ### Internal Ops Portal
-Cross-partner KPIs, partner performance table, health matrix, API monitoring, SLA & error budget, error intelligence, triggers, ownership, root-cause analytics, executive scorecards, audit logs, reports, observability (traces, dependency map, security metrics).
+Cross-partner KPIs, partner performance table, health matrix, API monitoring, observability (traces, dependency map, security metrics).
 
 ### Demo controls
 - **Role switcher** (top bar): Partner Portal ↔ Internal Ops
