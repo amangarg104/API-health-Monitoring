@@ -39,6 +39,29 @@ npm run build    # production build
 npm run preview  # preview production build
 ```
 
+## Deploy on Render
+
+Create a **Static Site** (not a Web Service) connected to this repo:
+
+| Setting | Value |
+|---------|--------|
+| Build Command | `npm install && npm run build` |
+| Publish Directory | `dist` |
+
+### Fix “Not Found” on routes
+
+React Router paths like `/partner` and `/internal` need a rewrite so Render serves `index.html`.
+
+**Option A — Dashboard:** Redirects/Rewrites → add:
+
+| Source | Destination | Action |
+|--------|-------------|--------|
+| `/*` | `/index.html` | Rewrite |
+
+**Option B — Blueprint:** this repo includes [`render.yaml`](render.yaml) with the same rewrite.
+
+After changing settings, trigger a **Manual Deploy**.
+
 ## Partner health score
 
 Weighted score used for Gold / Silver / Bronze / At Risk badges:
