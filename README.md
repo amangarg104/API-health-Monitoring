@@ -41,26 +41,30 @@ npm run preview  # preview production build
 
 ## Deploy on Render
 
-Create a **Static Site** (not a Web Service) connected to this repo:
+### Recommended: Web Service (Node)
 
 | Setting | Value |
 |---------|--------|
+| Service type | **Web Service** |
+| Runtime | Node |
 | Build Command | `npm install && npm run build` |
-| Publish Directory | `dist` |
+| Start Command | `npm start` |
 
-### Fix “Not Found” on routes
+This serves the Vite `dist/` folder with `serve -s`. The app uses **HashRouter** (`/#/internal`, `/#/partner`), so routes work without extra rewrite rules.
 
-React Router paths like `/partner` and `/internal` need a rewrite so Render serves `index.html`.
+### Alternative: Static Site
 
-**Option A — Dashboard:** Redirects/Rewrites → add:
+| Setting | Value |
+|---------|--------|
+| Service type | Static Site |
+| Build Command | `npm install && npm run build` |
+| Publish Directory | `dist` (**not** `build`) |
 
-| Source | Destination | Action |
-|--------|-------------|--------|
-| `/*` | `/index.html` | Rewrite |
+Still add Redirects/Rewrites: `/*` → `/index.html` (Rewrite) if you later switch back to path-based routing.
 
-**Option B — Blueprint:** this repo includes [`render.yaml`](render.yaml) with the same rewrite.
+Open the site at `https://YOUR-SERVICE.onrender.com/` — you should land on `/#/internal`.
 
-After changing settings, trigger a **Manual Deploy**.
+If you still see **Not Found**, check the Render deploy logs: the build must succeed and produce `dist/index.html`.
 
 ## Partner health score
 

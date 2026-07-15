@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { ThemeProvider } from 'next-themes'
 import { Toaster } from 'sonner'
 import { AuthProvider } from '@/app/AuthContext'
@@ -20,7 +20,7 @@ export function AppRouter() {
   return (
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
       <AuthProvider>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route path="/" element={<Navigate to="/internal" replace />} />
             <Route element={<AppShell />}>
@@ -125,7 +125,7 @@ export function AppRouter() {
             <Route path="*" element={<Navigate to="/internal" replace />} />
           </Routes>
           <Toaster richColors position="top-right" />
-        </BrowserRouter>
+        </HashRouter>
       </AuthProvider>
     </ThemeProvider>
   )
