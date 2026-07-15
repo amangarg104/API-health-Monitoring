@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-background: #f4f6f8;
+  --color-foreground: #0f172a;
+  --color-card: #ffffff;
+  --color-card-foreground: #0f172a;
+  --color-muted: #e8edf2;
+  --color-muted-foreground: #64748b;
+  --color-border: #d0d7e0;
+  --color-input: #d0d7e0;
+  --color-ring: #0d9488;
+  --color-primary: #0f766e;
+  --color-primary-foreground: #f0fdfa;
+  --color-secondary: #e2e8f0;
+  --color-secondary-foreground: #1e293b;
+  --color-accent: #ccfbf1;
+  --color-accent-foreground: #134e4a;
+  --color-destructive: #dc2626;
+  --color-destructive-foreground: #fef2f2;
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-critical: #dc2626;
+  --color-sidebar: #0b1220;
+  --color-sidebar-foreground: #cbd5e1;
+  --color-sidebar-active: #134e4a;
+  --color-sidebar-border: #1e293b;
+}
+
+.dark {
+  --color-background: #0b1220;
+  --color-foreground: #e2e8f0;
+  --color-card: #111827;
+  --color-card-foreground: #e2e8f0;
+  --color-muted: #1e293b;
+  --color-muted-foreground: #94a3b8;
+  --color-border: #243044;
+  --color-input: #243044;
+  --color-ring: #2dd4bf;
+  --color-primary: #14b8a6;
+  --color-primary-foreground: #042f2e;
+  --color-secondary: #1e293b;
+  --color-secondary-foreground: #e2e8f0;
+  --color-accent: #134e4a;
+  --color-accent-foreground: #99f6e4;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fef2f2;
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+  --color-critical: #f87171;
+  --color-sidebar: #060b14;
+  --color-sidebar-foreground: #94a3b8;
+  --color-sidebar-active: #0f766e;
+  --color-sidebar-border: #1e293b;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  font-family: var(--font-sans);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  background-image:
+    linear-gradient(rgba(15, 118, 110, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 118, 110, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.dark body {
+  background-image:
+    linear-gradient(rgba(45, 212, 191, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 212, 191, 0.04) 1px, transparent 1px);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-muted-foreground);
+  border-radius: 4px;
+  opacity: 0.5;
+}
